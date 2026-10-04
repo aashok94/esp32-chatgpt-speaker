@@ -1,0 +1,2 @@
+source C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader/gdbinit/symbols
+source C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader/gdbinit/connect

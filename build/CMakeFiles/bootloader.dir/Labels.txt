@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/CMakeFiles/bootloader
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/CMakeFiles/bootloader.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/CMakeFiles/bootloader-complete.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
