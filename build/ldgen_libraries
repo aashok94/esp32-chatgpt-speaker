@@ -161,6 +161,15 @@ C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/touch_element
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/usb/libusb.a
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/wifi_provisioning/libwifi_provisioning.a
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/json/libjson.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__cjson/libespressif__cjson.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__dl_fft/libespressif__dl_fft.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-dl/libespressif__esp-dl.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__dl_fft/libespressif__dl_fft.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-sr/libespressif__esp-sr.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/spiffs/libspiffs.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__cjson/libespressif__cjson.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-dl/libespressif__esp-dl.a
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp_codec_dev/libespressif__esp_codec_dev.a
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/main/libmain.a
+C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-sr/libespressif__esp-sr.a
 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp_codec_dev/libespressif__esp_codec_dev.a

@@ -2,27 +2,19 @@
 
 ## Development environment
 
-This project is being developed on:
-
 - **OS:** Windows
 - **Editor:** Visual Studio Code
 - **Framework:** ESP-IDF 5.5.5
 - **Target:** ESP32-S3
 
-### ESP-IDF setup
+## ESP-IDF setup
 
-1. Installed the official **Espressif IDF** extension in VS Code.
+1. Install the official **Espressif IDF** extension in VS Code.
+2. Open the ESP-IDF Installation Manager from the VS Code command palette.
+3. Use **Easy Installation** to install ESP-IDF and its toolchain.
+4. Open the configured ESP-IDF PowerShell terminal.
 
-2. Opened the ESP-IDF Installation Manager from the VS Code command palette.
-
-3. Used the **Easy Installation** option to install:
-   - ESP-IDF
-   - ESP32 compiler/toolchain
-   - Python environment
-   - CMake/Ninja build tools
-   - flashing and serial-monitor utilities
-
-4. ESP-IDF provides a configured PowerShell environment used for commands such as:
+Useful commands:
 
 ```powershell
 idf.py build
@@ -30,142 +22,210 @@ idf.py flash
 idf.py monitor
 ```
 
-5. Configured the project for the ESP32-S3:
+Configure the project:
 
 ```powershell
 idf.py set-target esp32s3
 ```
 
-6. Built the first firmware:
+Build:
 
 ```powershell
 idf.py build
 ```
 
-7. Connected the ESP32-S3 over USB. The board was detected on `COM4`.
-
-8. Flashed the firmware:
+Connect the board over USB and flash:
 
 ```powershell
 idf.py flash
 ```
 
-9. Opened the serial monitor:
+Open the serial monitor:
 
 ```powershell
 idf.py monitor
 ```
 
-10. The board booted successfully and executed `app_main()`:
+The first firmware test should print:
 
 ```text
 Hello, Ashita!
 ```
 
-This confirmed that the ESP-IDF toolchain, build process, USB connection, flashing, and serial communication were working correctly.
+## ESP-IDF version
 
-### ESP-IDF version
+The project initially used ESP-IDF 6.1, but the Waveshare audio code was incompatible with newer audio/I2S APIs.
 
-Development initially started with ESP-IDF 6.1.
+Install and use **ESP-IDF 5.5.5**.
 
-When the Waveshare board-support code was added, build errors appeared because the vendor audio/I2S code was written against the ESP-IDF 5.x APIs.
-
-ESP-IDF **5.5.5** was therefore installed and selected for this project.
-
-The project was then regenerated using:
+After switching versions:
 
 ```powershell
 idf.py fullclean
 idf.py set-target esp32s3
 ```
 
-## Audio playback preparation
+## Waveshare board support
 
-A short voice recording saying "Hi Ashita" was created in Audacity and exported as a WAV file.
-
-The file is stored at:
-
-```text
-main/assets/hiashita.wav
-```
-
-The WAV file is embedded directly into the firmware through `main/CMakeLists.txt`.
-
-### Waveshare board-support code
-
-The official Waveshare example package for the **ESP32-S3-AUDIO-Board** was downloaded from:
-
-**Waveshare documentation → ESP32-S3-AUDIO-Board → Resources → Examples → ESP32-S3-AUDIO-Board Examples**
-
-Direct documentation page:
+Download the official **ESP32-S3-AUDIO-Board Examples** from:
 
 https://docs.waveshare.com/ESP32-S3-AUDIO-Board/Resources-And-Documents
 
-On that page, download **ESP32-S3-AUDIO-Board Examples** under the **Examples** section.
-
-The downloaded examples were extracted and the `ESP-IDF` folder was copied into the repository temporarily as a reference.
-
-The complete Waveshare factory application is **not** being integrated into this project.
-
-From:
+On the page:
 
 ```text
-ESP-IDF/factory_01/main/hardeware_driver/
+Examples
+→ ESP32-S3-AUDIO-Board Examples
 ```
 
-only the following low-level board-support files were copied:
+Extract the archive and keep the `ESP-IDF` examples available as a reference.
+
+Copy:
 
 ```text
-bsp_board.c
-bsp_board.h
+ESP-IDF/factory_01/main/hardeware_driver/bsp_board.c
+ESP-IDF/factory_01/main/hardeware_driver/bsp_board.h
 ```
 
-They were copied into:
+to:
 
 ```text
 main/hardeware_driver/
 ```
 
-The following Waveshare factory-demo components were intentionally **not** copied:
+These files configure the board's I2C, I2S, ES8311 playback codec, and ES7210 microphone codec.
+
+## Audio playback
+
+Record a test phrase in Audacity and export it as:
 
 ```text
-audio_play_driver
-speech_det_driver
-button_driver
-rgb_led_driver
-tca9555_driver
+16 kHz
+16-bit PCM
+Stereo
+WAV
 ```
 
-These higher-level factory-demo components are not required for the current audio playback milestone.
+Store it at:
 
-The reused `bsp_board` code provides the low-level configuration needed for:
+```text
+main/assets/hiashita.wav
+```
 
-- I2C
-- I2S
-- ES8311 speaker/audio playback codec
-- ES7210 microphone codec
-
-### Audio codec dependency
-
-The Espressif codec dependency was added in:
+Add the codec dependency in:
 
 ```text
 main/idf_component.yml
 ```
-
-with:
 
 ```yaml
 dependencies:
   espressif/esp_codec_dev: "^1.6.2"
 ```
 
-`main/CMakeLists.txt` was updated to:
+Update `main/CMakeLists.txt` to compile `bsp_board.c` and embed `hiashita.wav`.
 
-- compile `bsp_board.c`
-- expose the board-support headers
-- embed `hiashita.wav` into the firmware
+Parse the WAV header at runtime to read:
 
-## Next milestone
+```text
+audio format
+channel count
+sample rate
+bits per sample
+```
 
-Initialize the board audio hardware and play the embedded `hiashita.wav` recording through the speaker.
+Use these values when calling `esp_board_init()`.
+
+Play the WAV in small chunks through `esp_audio_play()` to avoid large temporary allocations.
+
+## Speech recognition
+
+Copy:
+
+```text
+ESP-IDF/factory_01/main/speech_det_driver/mic_speech.c
+ESP-IDF/factory_01/main/speech_det_driver/mic_speech.h
+```
+
+to:
+
+```text
+main/speech_det_driver/
+```
+
+Add ESP-SR to `main/idf_component.yml`:
+
+```yaml
+dependencies:
+  espressif/esp_codec_dev: "^1.6.2"
+  espressif/esp-sr: "^2.1.5"
+```
+
+The speech stack uses:
+
+- ESP-SR AFE for microphone preprocessing
+- WakeNet for wake-word detection
+- MultiNet for offline command recognition
+
+## Speech model partition
+
+Create a root-level `partitions.csv`:
+
+```csv
+# Name,     Type, SubType, Offset,   Size, Flags
+nvs,        data,   nvs,      0x9000,       0x6000,
+factory,    0,      0,        0x10000,      3M,
+flash_test, data,   fat,      ,             528K,
+model,      data,   spiffs,   ,             5900K,
+```
+
+Enable it with:
+
+```text
+idf.py menuconfig
+→ Partition Table
+→ Custom partition table CSV
+→ partitions.csv
+```
+
+Set the board flash size to 16 MB:
+
+```text
+idf.py menuconfig
+→ Serial flasher config
+→ Flash size
+→ 16 MB
+```
+
+## Windows ESP-SR build fix
+
+ESP-SR model packaging may fail on Windows because of the default `cp1252` console encoding.
+
+Enable UTF-8 before building:
+
+```powershell
+$env:PYTHONUTF8="1"
+```
+
+Then rebuild:
+
+```powershell
+idf.py fullclean
+idf.py build
+```
+
+## Planned voice trigger
+
+```text
+"Hi ESP"
+    ↓
+WakeNet
+    ↓
+"Hello Jarvis"
+    ↓
+MultiNet
+    ↓
+play hiashita.wav
+```
+
+A custom wake phrase can be added later once the basic speech-recognition pipeline is stable.

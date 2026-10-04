@@ -569,6 +569,31 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__cjson/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__dl_fft/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp_new_jpeg/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-dl/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp-sr/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/espressif__esp_codec_dev/cmake_install.cmake")
 endif()
 

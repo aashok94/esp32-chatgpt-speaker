@@ -37,3 +37,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
   set(CMAKE_OBJDUMP "C:/Espressif/tools/xtensa-esp-elf/esp-14.2.0_20260121/xtensa-esp-elf/bin/xtensa-esp32s3-elf-objdump.exe")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/esp_psram/device/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/esp_psram/xip_impl/cmake_install.cmake")
+endif()
+
