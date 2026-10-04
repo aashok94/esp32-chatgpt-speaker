@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "esp32_chatgpt_speaker",
-    "project_version":    "1d35411-dirty",
+    "project_version":    "5cc721a-dirty",
     "project_path":       "C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker",
     "idf_path":           "C:/esp/v5.5.5/esp-idf",
     "build_dir":          "C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build",
