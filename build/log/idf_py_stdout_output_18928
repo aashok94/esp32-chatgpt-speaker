@@ -1,0 +1,221 @@
+Command: C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe C:\esp\v5.5.5\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\esp32_chatgpt_speaker.elf C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe' 'C:\esp\v5.5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2a (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048d0b
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 14 2026 14:21:22[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (69) boot:  2 flash_test       Unknown data     01 81 00310000 00084000[0m
+[0;32mI (76) boot:  3 model            Unknown data     01 82 00394000 005c3000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=313a8h (201640) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=000413d0 vaddr=3fc96600 size=06574h ( 25972) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0004794c vaddr=40374000 size=086cch ( 34508) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=c1dd4h (794068) map[0m
+[0;32mI (289) esp_image: segment 4: paddr=00111dfc vaddr=4037c6cc size=09ed4h ( 40660) load[0m
+[0;32mI (299) esp_image: segment 5: paddr=0011bcd8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (307) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (307) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (318) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (318) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (320) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (324) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (328) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (332) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (337) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (342) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (347) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (352) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (356) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (360) esp_psram: Speed: 40MHz[0m
+[0;32mI (363) cpu_start: Multicore app[0m
+[0;32mI (1097) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1106) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (1107) cpu_start: Pro cpu start user code[0m
+[0;32mI (1107) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1108) app_init: Application information:[0m
+[0;32mI (1112) app_init: Project name:     esp32_chatgpt_speaker[0m
+[0;32mI (1117) app_init: App version:      a69e22d-dirty[0m
+[0;32mI (1122) app_init: Compile time:     Oct 14 2026 17:30:52[0m
+[0;32mI (1127) app_init: ELF file SHA256:  bffb5aec7...[0m
+[0;32mI (1132) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (1135) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1139) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1143) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1147) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1154) heap_init: At 3FCA35F8 len 00046118 (280 KiB): RAM[0m
+[0;32mI (1159) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1164) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1169) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (1175) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1183) spi_flash: detected chip: generic[0m
+[0;32mI (1185) spi_flash: flash io: dio[0m
+[0;32mI (1189) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1195) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1202) main_task: Started on CPU0[0m
+[0;32mI (1202) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1212) main_task: Calling app_main()[0m
+[0;32mI (1212) main: Embedded WAV size: 74348 bytes[0m
+[0;32mI (1222) main: WAV format: 1[0m
+[0;32mI (1222) main: Channels: 2[0m
+[0;32mI (1222) main: Sample rate: 16000 Hz[0m
+[0;32mI (1232) main: Bits per sample: 16[0m
+[0;33mW (1232) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1252) board: I2C bus initialized successfully[0m
+[0;32mI (1252) I2S_IF: Auto get out handle 0x3c110e00 from in handle 0x3c110fbc when duplex mode[0m
+[0;32mI (1262) ES7210: Work in Slave mode[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1282) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1282) ES7210: Enable TDM mode[0m
+[0;32mI (1292) I2S_IF: Paired data: 0x3fcee908, current mode: record, paired in_enable: 0, paired out_enable: 0[0m
+[0;32mI (1292) I2S_IF: STD: RX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1302) I2S_IF: STD: RX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1302) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1312) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1322) ES7210: Bits 16[0m
+[0;32mI (1332) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1332) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1342) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1342) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1342) ES7210: Enable TDM mode[0m
+[0;32mI (1352) ES7210: Unmuted[0m
+[0;32mI (1352) Adev_Codec: Open codec device OK[0m
+[0;32mI (1362) ES8311: Work in Slave mode[0m
+[0;32mI (1362) I2S_IF: Current mode(playback) and peer mode have same sample_rate 16000, channel 2, bits_per_sample 32[0m
+[0;32mI (1362) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1372) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1402) Adev_Codec: Open codec device OK[0m
+[0;32mI (1402) MODEL_LOADER: The storage free size is 23488 KB[0m
+[0;32mI (1402) MODEL_LOADER: The partition size is 5900 KB[0m
+[0;32mI (1402) MODEL_LOADER: Successfully load srmodels[0m
+[0;32mI (1402) AFE_CONFIG: Set WakeNet Model: wn9_hiesp[0m
+MC Quantized wakenet9: wakeNet9_v1h24_Hi,ESP_3_0.63_0.635, tigger:v4, mode:4, p:0, (Sep 24 2026 04:32:12)
+[0;32mI (1642) AFE: AFE Version: (2MIC_V251128)[0m
+[0;32mI (1642) AFE: Input PCM Config: total 4 channels(2 microphone, 1 playback), sample rate:16000[0m
+[0;32mI (1652) AFE: AFE Pipeline: [input] -> |AEC(SR_LOW_COST, NLP_OFF)| -> |SE(BSS)| -> |WakeNet(wn9_hiesp,)| -> [output][0m
+multinet:mn5q8_en
+Quantized8 Multinet5: MN5Q8_v2_english_8_0.9_0.90, beam search:v2, (Sep 24 2026 04:32:12)
+esp_mn_commands_update_from_sdkconfig
+[0;32mI (2312) MN_COMMAND: ---------------------SPEECH COMMANDS---------------------[0m
+[0;32mI (2312) MN_COMMAND: Command ID0, phrase ID0: TfL Mm c qbK[0m
+[0;32mI (2322) MN_COMMAND: Command ID1, phrase ID1: Sgl c Sel[0m
+[0;32mI (2322) MN_COMMAND: Command ID2, phrase ID2: PLd NoZ paNcL[0m
+[0;32mI (2332) MN_COMMAND: Command ID3, phrase ID3: TkN nN Mi StNDBnKS[0m
+[0;32mI (2332) MN_COMMAND: Command ID4, phrase ID4: TkN eF Mi StNDBnKS[0m
+[0;32mI (2342) MN_COMMAND: Command ID5, phrase ID5: hicST VnLYoM[0m
+[0;32mI (2352) MN_COMMAND: Command ID6, phrase ID6: LbcST VnLYoM[0m
+[0;32mI (2352) MN_COMMAND: Command ID7, phrase ID7: gNKRmS jc VnLYoM[0m
+[0;32mI (2362) MN_COMMAND: Command ID8, phrase ID8: DgKRmS jc VnLYoM[0m
+[0;32mI (2362) MN_COMMAND: Command ID9, phrase ID9: TkN nN jc TmVm[0m
+[0;32mI (2372) MN_COMMAND: Command ID10, phrase ID10: TkN eF jc TmVm[0m
+[0;32mI (2372) MN_COMMAND: Command ID11, phrase ID11: MdK Mm c Tm[0m
+[0;32mI (2382) MN_COMMAND: Command ID12, phrase ID12: MdK Mm c KnFm[0m
+[0;32mI (2382) MN_COMMAND: Command ID13, phrase ID13: TkN nN jc LiT[0m
+[0;32mI (2392) MN_COMMAND: Command ID14, phrase ID14: TkN eF jc LiT[0m
+[0;32mI (2392) MN_COMMAND: Command ID15, phrase ID15: pdNq jc KcLk To RfD[0m
+[0;32mI (2402) MN_COMMAND: Command ID16, phrase ID16: pdNq jc KcLk To GRmN[0m
+[0;32mI (2412) MN_COMMAND: Command ID17, phrase ID17: TkN nN eL jc list[0m
+[0;32mI (2412) main: Playing hiashita.wav[0m
+[0;32mI (2412) MN_COMMAND: Command ID18, phrase ID18: TkN eF eL jc list[0m
+[0;32mI (2422) MN_COMMAND: Command ID19, phrase ID19: TkN nN jc fR KcNDgscNk[0m
+[0;32mI (2432) MN_COMMAND: Command ID20, phrase ID20: TkN eF jc fR KcNDgscNk[0m
+[0;32mI (2432) MN_COMMAND: Command ID21, phrase ID21: SfT jc TfMPRcpk To SgKSTmN DgGRmZ[0m
+[0;32mI (2442) MN_COMMAND: Command ID22, phrase ID22: SfT jc TfMPRcpk To SfVcNTmN DgGRmZ[0m
+[0;32mI (2452) MN_COMMAND: Command ID23, phrase ID23: SfT jc TfMPRcpk To dTmN DgGRmZ[0m
+[0;32mI (2462) MN_COMMAND: Command ID24, phrase ID24: SfT jc TfMPRcpk To NiNTmN DgGRmZ[0m
+[0;32mI (2462) MN_COMMAND: Command ID25, phrase ID25: SfT jc TfMPRcpk To TWfNTm DgGRmZ[0m
+[0;32mI (2472) MN_COMMAND: Command ID26, phrase ID26: SfT jc TfMPRcpk To TWfNTm WcN DgGRmZ[0m
+[0;32mI (2482) MN_COMMAND: Command ID27, phrase ID27: SfT jc TfMPRcpk To TWfNTm To DgGRmZ[0m
+[0;32mI (2482) MN_COMMAND: Command ID28, phrase ID28: SfT jc TfMPRcpk To TWfNTm vRm DgGRmZ[0m
+[0;32mI (2492) MN_COMMAND: Command ID29, phrase ID29: SfT jc TfMPRcpk To TWfNTm FeR DgGRmZ[0m
+[0;32mI (2502) MN_COMMAND: Command ID30, phrase ID30: SfT jc TfMPRcpk To TWfNTm FiV DgGRmZ[0m
+[0;32mI (2512) MN_COMMAND: Command ID31, phrase ID31: SfT jc TfMPRcpk To TWfNTm SgKS DgGRmZ[0m
+[0;32mI (2512) MN_COMMAND: ---------------------------------------------------------[0m
+
+phrase id:0, command id:0, str:T f L   M m   c   q b K 
+phrase id:1, command id:1, str:S g l   c   S e l 
+phrase id:2, command id:2, str:P L d   N o Z   p a N c L 
+phrase id:3, command id:3, str:T k N   n N   M i   S t N D B n K S 
+phrase id:4, command id:4, str:T k N   e F   M i   S t N D B n K S 
+phrase id:5, command id:5, str:h i c S T   V n L Y o M 
+phrase id:6, command id:6, str:L b c S T   V n L Y o M 
+phrase id:7, command id:7, str:g N K R m S   j c   V n L Y o M 
+phrase id:8, command id:8, str:D g K R m S   j c   V n L Y o M 
+phrase id:9, command id:9, str:T k N   n N   j c   T m V m 
+phrase id:10, command id:10, str:T k N   e F   j c   T m V m 
+phrase id:11, command id:11, str:M d K   M m   c   T m 
+phrase id:12, command id:12, str:M d K   M m   c   K n F m 
+phrase id:13, command id:13, str:T k N   n N   j c   L i T 
+phrase id:14, command id:14, str:T k N   e F   j c   L i T 
+phrase id:15, command id:15, str:p d N q   j c   K c L k   T o   R f D 
+phrase id:16, command id:16, str:p d N q   j c   K c L k   T o   G R m N 
+phrase id:17, command id:17, str:T k N   n N   e L   j c   l i s t 
+phrase id:18, command id:18, str:T k N   e F   e L   j c   l i s t 
+phrase id:19, command id:19, str:T k N   n N   j c   f R   K c N D g s c N k 
+phrase id:20, command id:20, str:T k N   e F   j c   f R   K c N D g s c N k 
+phrase id:21, command id:21, str:S f T   j c   T f M P R c p k   T o   S g K S T m N   D g G R m Z 
+phrase id:22, command id:22, str:S f T   j c   T f M P R c p k   T o   S f V c N T m N   D g G R m Z 
+phrase id:23, command id:23, str:S f T   j c   T f M P R c p k   T o   d T m N   D g G R m Z 
+phrase id:24, command id:24, str:S f T   j c   T f M P R c p k   T o   N i N T m N   D g G R m Z 
+phrase id:25, command id:25, str:S f T   j c   T f M P R c p k   T o   T W f N T m   D g G R m Z 
+phrase id:26, command id:26, str:S f T   j c   T f M P R c p k   T o   T W f N T m   W c N   D g G R m Z 
+phrase id:27, command id:27, str:S f T   j c   T f M P R c p k   T o   T W f N T m   T o   D g G R m Z 
+phrase id:28, command id:28, str:S f T   j c   T f M P R c p k   T o   T W f N T m   v R m   D g G R m Z 
+phrase id:29, command id:29, str:S f T   j c   T f M P R c p k   T o   T W f N T m   F e R   D g G R m Z 
+phrase id:30, command id:30, str:S f T   j c   T f M P R c p k   T o   T W f N T m   F i V   D g G R m Z 
+phrase id:31, command id:31, str:S f T   j c   T f M P R c p k   T o   T W f N T m   S g K S   D g G R m Z 
+[0;32mI (4302) main: Playback finished[0m
+[0;32mI (4302) main_task: Returned from app_main()[0m
+[0;32mI (10152) main: Wake word detected[0m
+[1;31mE (15382) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (15382) task_wdt:  - IDLE0 (CPU 0)[0m
+[1;31mE (15382) task_wdt: Tasks currently running:[0m
+[1;31mE (15382) task_wdt: CPU 0: feed[0m
+[1;31mE (15382) task_wdt: CPU 1: detect[0m
+[1;31mE (15382) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x420939B6:0x3FC9A7F0 0x42093DCC:0x3FC9A810 0x40377A15:0x3FC9A840 0x420AB42E:0x3FCC12A0 0x4201BD53:0x3FCC12B0 0x42010F0B:0x3FCC1350 0x4200C7AE:0x3FCC1390 0x4037DB79:0x3FCC13B0
+
+[0;33mW (18862) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (19162) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (19562) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (19852) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (20252) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (20642) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (20942) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (21342) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (21652) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (22142) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (22352) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[0;33mW (22842) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[1;31mE (23862) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (23862) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (23862) task_wdt: Tasks currently running:[0m
+[1;31mE (23862) task_wdt: CPU 0: feed[0m
+[1;31mE (23862) task_wdt: CPU 1: detect[0m
+[1;31mE (23862) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x403785DE:0x3FC9AE20 0x40377A15:0x3FC9AE40 0x4037713E:0x3FCBF240 0x42042CDC:0x3FCBF250 0x420409CC:0x3FCBF270 0x42031216:0x3FCBF2C0 0x42032257:0x3FCBF2E0 0x4203233B:0x3FCBF300 0x4200FE3E:0x3FCBF320 0x42010CB9:0x3FCBF350 0x42010CE9:0x3FCBF370 0x4200C881:0x3FCBF390 0x4037DB79:0x3FCBF3B0
+

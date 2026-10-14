@@ -1,0 +1,35 @@
+Command: ninja all
+[1/1232] Generating project_elf_src_esp32s3.c
+[2/1232] Generating C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/esp_system/ld/memory.ld linker script...
+[3/1232] Generating C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/esp-idf/esp_system/ld/sections.ld.in linker script...
+[4/1232] Move and Pack models...
+FAILED: srmodels/srmodels.bin C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build/srmodels/srmodels.bin 
+C:\Windows\system32\cmd.exe /C "cd /D C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\esp-idf\espressif__esp-sr && python C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/managed_components/espressif__esp-sr/model/movemodel.py -d1 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/sdkconfig -d2 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/managed_components/espressif__esp-sr -d3 C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/build"
+
+ESP-SR Models Report
+Traceback (most recent call last):
+  File "C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\managed_components\espressif__esp-sr\model\movemodel.py", line 242, in <module>
+    print('\u2500' * 40)
+  File "C:\Users\PCUser\miniconda3\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-39: character maps to <undefined>
+[5/1232] Generating ../../partition_table/partition-table.bin
+Partition table binary generated. Contents:
+*******************************************************************************
+# ESP-IDF Partition Table
+# Name, Type, SubType, Offset, Size, Flags
+nvs,data,nvs,0x9000,24K,
+factory,app,factory,0x10000,3M,
+flash_test,data,fat,0x310000,528K,
+model,data,spiffs,0x394000,5900K,
+*******************************************************************************
+[6/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/util/ctrl_sock.c.obj
+[7/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_uri.c.obj
+[8/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_parse.c.obj
+[9/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_sess.c.obj
+[10/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_txrx.c.obj
+[11/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_main.c.obj
+[12/1232] Building C object esp-idf/esp_https_ota/CMakeFiles/__idf_esp_https_ota.dir/src/esp_https_ota.c.obj
+[13/1232] Building C object esp-idf/esp_http_server/CMakeFiles/__idf_esp_http_server.dir/src/httpd_ws.c.obj
+ninja: build stopped: subcommand failed.

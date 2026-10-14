@@ -1,0 +1,33 @@
+Command: cmake -G Ninja -B C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v6.1\venv\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker
+-- Minimal build - OFF
+-- ccache will be used for faster recompilation
+-- Building ESP-IDF components for target esp32s3
+NOTE: Current idf-component-manager default lock file version is 3.0.0, but 
+found 2.0.0 in 
+C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\dependencies.lock. 
+Recreating lock file with the current version.
+NOTE: Skipping optional dependency: espressif/esp-dsp
+NOTE: 
+Following dependencies have new versions available:
+Dependency "espressif/esp-sr": "2.5.5" -> "2.6.0"
+Consider running "idf.py update-dependencies" to update your lock file.
+NOTE: Updating lock file at 
+C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\dependencies.lock
+NOTE: Processing 7 dependencies:
+NOTE: [1/7] espressif/cjson (1.7.19~2)
+NOTE: [2/7] espressif/dl_fft (0.8.0)
+NOTE: [3/7] espressif/esp-dl (3.3.13)
+NOTE: [4/7] espressif/esp-sr (2.5.5)
+NOTE: [5/7] espressif/esp_codec_dev (1.6.2)
+NOTE: [6/7] espressif/esp_new_jpeg (1.0.2)
+NOTE: [7/7] idf (6.1.0)
+-- CONFIG_ESP32P4_SELECTS_REV_LESS_V3 is 
+-- IDF_VERSION_MAJOR is 6
+-- IDF_VERSION_MINOR is 1
+-- IDF_VERSION_PATCH is 0
+-- TARGET_LIB_PATH is set to: esp32s3
+NOTE: Skipping optional dependency: espressif/esp-dsp
+-- KCONFIG_REPORT_VERBOSITY not set, using default
+-- Project sdkconfig file C:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Configuring incomplete, errors occurred!

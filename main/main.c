@@ -15,6 +15,8 @@ static const char *TAG = "main";
 extern const uint8_t wav_start[] asm("_binary_hiashita_wav_start");
 extern const uint8_t wav_end[]   asm("_binary_hiashita_wav_end");
 
+
+/* Read a 32-bit little-endian integer from the WAV byte stream. */
 static uint32_t read_u32_le(const uint8_t *data)
 {
     return ((uint32_t)data[0]) |
@@ -23,12 +25,21 @@ static uint32_t read_u32_le(const uint8_t *data)
            ((uint32_t)data[3] << 24);
 }
 
+
+/* Read a 16-bit little-endian integer from the WAV byte stream. */
 static uint16_t read_u16_le(const uint8_t *data)
 {
     return ((uint16_t)data[0]) |
            ((uint16_t)data[1] << 8);
 }
 
+
+/*
+ * Called by the speech driver when WakeNet detects "Hi ESP".
+ *
+ * MultiNet command recognition is currently disabled, so
+ * ESP_SR_EVT_CMD is kept only for possible future use.
+ */
 static void speech_event_callback(
     esp_sr_rec_event_t event,
     esp_sr_evt_data_t evt_data,
@@ -44,13 +55,14 @@ static void speech_event_callback(
     }
 }
 
+
 void app_main(void)
 {
     const size_t wav_size = wav_end - wav_start;
 
     ESP_LOGI(TAG, "Embedded WAV size: %u bytes", (unsigned)wav_size);
 
-    /* WAV starts with: RIFF .... WAVE */
+    /* Verify the basic RIFF/WAVE header. */
     if (wav_size < 12 ||
         memcmp(wav_start, "RIFF", 4) != 0 ||
         memcmp(wav_start + 8, "WAVE", 4) != 0) {
@@ -69,6 +81,12 @@ void app_main(void)
 
     size_t offset = 12;
 
+    /*
+     * Walk through the WAV chunks.
+     *
+     * "fmt " describes the audio format.
+     * "data" contains the actual PCM samples.
+     */
     while (offset + 8 <= wav_size) {
         const uint8_t *chunk = wav_start + offset;
         uint32_t chunk_size = read_u32_le(chunk + 4);
@@ -89,6 +107,7 @@ void app_main(void)
 
         offset += 8 + chunk_size;
 
+        /* WAV chunks are padded to an even number of bytes. */
         if (chunk_size % 2 != 0) {
             offset++;
         }
@@ -104,19 +123,38 @@ void app_main(void)
     ESP_LOGI(TAG, "Sample rate: %lu Hz", sample_rate);
     ESP_LOGI(TAG, "Bits per sample: %u", bits_per_sample);
 
-    ESP_ERROR_CHECK(esp_board_init(16000, 2, 16));
+    /*
+     * Initialize the board audio hardware first.
+     *
+     * Use the format read from the WAV instead of duplicating
+     * 16000 Hz / stereo / 16-bit as hard-coded values.
+     */
+    ESP_ERROR_CHECK(
+        esp_board_init(
+            sample_rate,
+            channels,
+            bits_per_sample
+        )
+    );
+
     ESP_ERROR_CHECK(esp_audio_set_play_vol(60));
 
-    ESP_ERROR_CHECK(Speech_register_callback(speech_event_callback));
-    Speech_Init();
 
+    /*
+     * Play the startup WAV BEFORE starting WakeNet.
+     *
+     * Speech_Init() starts the microphone/AFE tasks, which use the
+     * same audio/I2S hardware. Starting those tasks before playback
+     * can interfere with speaker playback.
+     */
     ESP_LOGI(TAG, "Playing hiashita.wav");
 
     const size_t chunk_size = 2048;
 
     for (size_t offset = 0; offset < audio_size; offset += chunk_size) {
         size_t remaining = audio_size - offset;
-        size_t current_size = remaining < chunk_size ? remaining : chunk_size;
+        size_t current_size =
+            remaining < chunk_size ? remaining : chunk_size;
 
         ESP_ERROR_CHECK(
             esp_audio_play(
@@ -128,4 +166,21 @@ void app_main(void)
     }
 
     ESP_LOGI(TAG, "Playback finished");
+
+
+    /*
+     * Start speech recognition only AFTER startup playback finishes.
+     *
+     * Current flow:
+     *
+     * microphone -> AFE -> WakeNet ("Hi ESP")
+     *            -> speech_event_callback()
+     *
+     * Later the wake event will start the ChatGPT voice session.
+     */
+    ESP_ERROR_CHECK(
+        Speech_register_callback(speech_event_callback)
+    );
+
+    Speech_Init();
 }

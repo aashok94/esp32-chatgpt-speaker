@@ -1,0 +1,1167 @@
+Command: C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe C:\esp\v5.5.5\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\esp32_chatgpt_speaker.elf C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe' 'C:\esp\v5.5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2a (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048d08
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 14 2026 14:21:22[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (69) boot:  2 flash_test       Unknown data     01 81 00310000 00084000[0m
+[0;32mI (76) boot:  3 model            Unknown data     01 82 00394000 005c3000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=c0c14h (789524) map[0m
+[0;32mI (237) esp_image: segment 1: paddr=000d0c3c vaddr=3fc96600 size=06574h ( 25972) load[0m
+[0;32mI (243) esp_image: segment 2: paddr=000d71b8 vaddr=40374000 size=08e60h ( 36448) load[0m
+[0;32mI (252) esp_image: segment 3: paddr=000e0020 vaddr=42000020 size=c8bb0h (822192) map[0m
+[0;32mI (402) esp_image: segment 4: paddr=001a8bd8 vaddr=4037ce60 size=09740h ( 38720) load[0m
+[0;32mI (411) esp_image: segment 5: paddr=001b2320 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (419) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (420) boot: Disabling RNG early entropy source...[0m
+[0;32mI (430) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (430) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (430) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (432) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (436) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (441) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (445) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (450) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (455) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (459) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (464) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (469) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (472) esp_psram: Speed: 40MHz[0m
+[0;32mI (475) cpu_start: Multicore app[0m
+[0;32mI (1209) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1218) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (1219) cpu_start: Pro cpu start user code[0m
+[0;32mI (1219) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1221) app_init: Application information:[0m
+[0;32mI (1225) app_init: Project name:     esp32_chatgpt_speaker[0m
+[0;32mI (1230) app_init: App version:      a69e22d-dirty[0m
+[0;32mI (1234) app_init: Compile time:     Oct 14 2026 17:17:33[0m
+[0;32mI (1240) app_init: ELF file SHA256:  b3fc05fec...[0m
+[0;32mI (1244) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (1248) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1252) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1256) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1260) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1266) heap_init: At 3FCA3660 len 000460B0 (280 KiB): RAM[0m
+[0;32mI (1271) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1277) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1282) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (1288) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1295) spi_flash: detected chip: generic[0m
+[0;32mI (1298) spi_flash: flash io: dio[0m
+[0;32mI (1301) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1307) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1314) main_task: Started on CPU0[0m
+[0;32mI (1314) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1324) main_task: Calling app_main()[0m
+[0;32mI (1324) main: Embedded WAV size: 74348 bytes[0m
+[0;32mI (1334) main: WAV format: 1[0m
+[0;32mI (1334) main: Channels: 2[0m
+[0;32mI (1334) main: Sample rate: 16000 Hz[0m
+[0;32mI (1344) main: Bits per sample: 16[0m
+[0;33mW (1344) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1364) board: I2C bus initialized successfully[0m
+[0;32mI (1364) I2S_IF: Auto get out handle 0x3c1a0e00 from in handle 0x3c1a0fbc when duplex mode[0m
+[0;32mI (1374) ES7210: Work in Slave mode[0m
+[0;32mI (1384) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1384) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1384) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1394) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1394) ES7210: Enable TDM mode[0m
+[0;32mI (1404) I2S_IF: Paired data: 0x3fcee908, current mode: record, paired in_enable: 0, paired out_enable: 0[0m
+[0;32mI (1404) I2S_IF: STD: RX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1414) I2S_IF: STD: RX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1414) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1424) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1434) ES7210: Bits 16[0m
+[0;32mI (1444) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1444) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1454) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1454) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1454) ES7210: Enable TDM mode[0m
+[0;32mI (1464) ES7210: Unmuted[0m
+[0;32mI (1464) Adev_Codec: Open codec device OK[0m
+[0;32mI (1474) ES8311: Work in Slave mode[0m
+[0;32mI (1474) I2S_IF: Current mode(playback) and peer mode have same sample_rate 16000, channel 2, bits_per_sample 32[0m
+[0;32mI (1474) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1484) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1514) Adev_Codec: Open codec device OK[0m
+[0;32mI (1514) MODEL_LOADER: The storage free size is 22912 KB[0m
+[0;32mI (1514) MODEL_LOADER: The partition size is 5900 KB[0m
+[0;32mI (1514) MODEL_LOADER: Successfully load srmodels[0m
+[0;32mI (1514) AFE_CONFIG: Set WakeNet Model: wn10_hiesp[0m
+[0;32mI (1524) AFE_CONFIG: Set Second WakeNet Model: wn9_hiesp[0m
+[0;33mW (1964) dl::Model: minimize() will delete unused inference variables, breaking model testing/debugging.[0m
+[0;32mI (1984) WAKENET10: MC Quantized wakenetx: wakenet10_tts4h12q8p1_hiesp_3_0.5872_0.6228, tigger:v4, mode:4[0m
+
+MC Quantized wakenet9: wakeNet9_v1h24_Hi,ESP_3_0.63_0.635, tigger:v4, mode:4, p:0, (Sep 24 2026 04:32:12)
+[0;32mI (2054) AFE: AFE Version: (2MIC_V251128)[0m
+[0;32mI (2054) AFE: Input PCM Config: total 4 channels(2 microphone, 1 playback), sample rate:16000[0m
+[0;32mI (2064) AFE: AFE Pipeline: [input] -> |AEC(SR_LOW_COST, NLP_OFF)| -> |SE(BSS)| -> |WakeNet(wn10_hiesp,wn9_hiesp)| -> [output][0m
+multinet:mn7_en
+[0;32mI (2884) main: Playing hiashita.wav[0m
+Build fst from commands.
+Quantized MultiNet7:rnnt_ctc_2.0, name:mn7_en, (Sep 24 2026 04:32:13)
+Quantized MultiNet7 search method: 2, time out:6.0 s
+49 active speech commands:
+Command 1: TfL Mm c qbK
+Command 2: Sgl c Sel
+Command 3: PLd NoZ paNcL
+Command 4: TkN nN Mi StNDBnKS
+Command 5: TkN eF Mi StNDBnKS
+Command 5: TkN cV Mi StNDBnKS
+Command 6: hicST VnLYoM
+Command 7: LbcST VnLYoM
+Command 8: gNKRmS jc VnLYoM
+Command 9: DgKRmS jc VnLYoM
+Command 10: TkN nN jc TmVm
+Command 11: TkN eF jc TmVm
+Command 11: TkN cV jc TmVm
+Command 12: MdK Mm c Tm
+Command 13: MdK Mm c KnFm
+Command 14: TkN nN jc LiT
+Command 15: TkN eF jc LiT
+Command 15: TkN cV jc LiT
+Command 16: pdNq jc KcLk To RfD
+Command 17: pdNq jc KcLk To GRmN
+Command 18: TkN nN eL jc LiTS
+Command 19: TkN eF eL jc LiTS
+Command 19: TkN cV eL jc LiTS
+Command 20: TkN nN jc fR KcNDgscNk
+Command 21: TkN eF jc fR KcNDgscNk
+Command 21: TkN cV jc fR KcNDgscNk
+Command 22: SfT jc TfMPRcpk To SgKSTmN DgGRmZ
+Command 23: SfT jc TfMPRcpk To SfVcNTmN DgGRmZ
+Command 24: SfT jc TfMPRcpk To dTmN DgGRmZ
+Command 25: SfT jc TfMPRcpk To NiNTmN DgGRmZ
+Command 26: SfT jc TfMPRcpk To TWfNTm DgGRmZ
+Command 27: SfT jc TfMPRcpk To TWfNTm WcN DgGRmZ
+Command 28: SfT jc TfMPRcpk To TWfNTm To DgGRmZ
+Command 29: SfT jc TfMPRcpk To TWfNTm vRm DgGRmZ
+Command 30: SfT jc TfMPRcpk To TWfNTm FeR DgGRmZ
+Command 31: SfT jc TfMPRcpk To TWfNTm FiV DgGRmZ
+Command 32: SfT jc TfMPRcpk To TWfNTm SgKS DgGRmZ
+Command 33: LbcST FaN SPmD
+Command 34: MmDmcM FaN SPmD
+Command 35: hicST FaN SPmD
+Command 36: eTb cqcST jc FaN SPmD
+Command 37: DgKRmS jc FaN SPmD
+Command 38: gNKRmS jc FaN SPmD
+Command 39: gNKRmS jc TfMPRcpk
+Command 40: DgKRmS jc TfMPRcpk
+Command 41: KoLgl MbD
+Command 42: hmTgl MbD
+Command 43: VfNTcLdscN MbD
+Command 44: DmhYoMgDcFi MbD
+[1;31mE (3664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4914) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4914) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4984) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6004) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6264) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6924) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6924) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (6994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7004) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7094) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7884) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (7884) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (7884) task_wdt: Tasks currently running:[0m
+[1;31mE (7884) task_wdt: CPU 0: feed[0m
+[1;31mE (7884) task_wdt: CPU 1: detect[0m
+[1;31mE (7884) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x403785DE:0x3FC9AE20 0x40377A15:0x3FC9AE40 0x40377131:0x3FCC5C30 0x42042924:0x3FCC5C40 0x4203FCB9:0x3FCC5C60 0x42030D25:0x3FCC5CB0 0x42031010:0x3FCC5CD0 0x420310DF:0x3FCC5CF0 0x4200EACE:0x3FCC5D10 0x4200F949:0x3FCC5D40 0x4200F979:0x3FCC5D60 0x4200C81D:0x3FCC5D80 0x4037DB79:0x3FCC5DA0
+
+[1;31mE (7944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (7974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8894) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (8964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9894) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9924) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (9994) Conv: no Conv kernel for packed key 0x0202[0m
+[0;33mW (9994) AFE: Ringbuffer of AFE(FEED) is full, Please use fetch() to read data to avoid data loss or overwriting[0m
+[1;31mE (10004) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10924) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10984) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (10994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11094) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11094) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11924) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11984) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (11994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12094) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12264) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12374) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12884) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (12884) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (12884) task_wdt: Tasks currently running:[0m
+[1;31mE (12884) task_wdt: CPU 0: feed[0m
+[1;31mE (12884) task_wdt: CPU 1: detect[0m
+[1;31mE (12884) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x403785DE:0x3FC9AE20 0x40377A15:0x3FC9AE40 0x4037715F:0x3FCC5C30 0x42042924:0x3FCC5C40 0x4203FCB9:0x3FCC5C60 0x42030D25:0x3FCC5CB0 0x42031010:0x3FCC5CD0 0x420310DF:0x3FCC5CF0 0x4200EACE:0x3FCC5D10 0x4200F949:0x3FCC5D40 0x4200F979:0x3FCC5D60 0x4200C81D:0x3FCC5D80 0x4037DB79:0x3FCC5DA0
+
+[1;31mE (12944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (12984) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13034) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (13964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14894) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14914) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14914) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (14974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15024) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15194) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15204) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15364) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15534) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15804) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15914) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (15994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16254) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16314) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16394) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16424) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16594) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16604) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16764) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16814) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16894) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16894) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16934) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16944) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16984) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (16994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17104) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17114) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17154) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17274) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17354) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17434) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17524) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17584) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17694) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17774) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17834) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17854) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17864) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17884) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (17884) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (17884) task_wdt: Tasks currently running:[0m
+[1;31mE (17884) task_wdt: CPU 0: feed[0m
+[1;31mE (17884) task_wdt: CPU 1: detect[0m
+[1;31mE (17884) task_wdt: Print CPU 1 backtrace[0m
+
+
+Backtrace: 0x403785DE:0x3FC9AE20 0x40377A15:0x3FC9AE40 0x42008C34:0x3FCC56B0 0x42009B75:0x3FCC56E0 0x4200B45A:0x3FCC5710 0x420ABBD6:0x3FCC5730 0x4200AE55:0x3FCC5750 0x4200B45A:0x3FCC5770 0x420AB436:0x3FCC5790 0x420AA925:0x3FCC57B0 0x420AA977:0x3FCC57D0 0x420AB0B9:0x3FCC57F0 0x420AA717:0x3FCC5820 0x420AA5EA:0x3FCC5840 0x420AB4AD:0x3FCC5B60 0x40383BC3:0x3FCC5B90 0x4207ECC1:0x3FCC5BF0 0x42074009:0x3FCC5C60 0x420338A9:0x3FCC5C90 0x42033946:0x3FCC5CB0 0x420339AB:0x3FCC5CD0 0x420339E5:0x3FCC5CF0 0x4200EACE:0x3FCC5D10 0x4200F949:0x3FCC5D40 0x4200F979:0x3FCC5D60 0x4200C81D:0x3FCC5D80 0x4037DB79:0x3FCC5DA0
+
+[1;31mE (17884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17974) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (17994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18014) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18054) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18064) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18084) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18144) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18224) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18334) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18444) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18484) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18504) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18544) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18564) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18614) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18654) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18674) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18704) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18714) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18734) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18784) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18824) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18844) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18874) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18884) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18904) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18954) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18964) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (18994) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19004) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19004) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19044) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19074) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19124) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19134) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19164) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19174) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19184) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19214) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19234) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19244) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19284) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19294) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19304) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19324) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19344) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19384) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19404) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19414) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19454) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19464) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19474) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19494) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19514) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19554) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19574) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19624) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19634) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19644) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19664) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19684) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19724) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19744) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19754) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19794) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (19804) Conv: no Conv kernel for packed key 0x0202[0m

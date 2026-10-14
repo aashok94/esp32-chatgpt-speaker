@@ -1,0 +1,420 @@
+Command: C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe C:\esp\v5.5.5\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\esp32_chatgpt_speaker.elf C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe' 'C:\esp\v5.5.5\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2a (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40048ee5
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xd24
+load:0x403cb700,len:0x2eec
+entry 0x403c8924
+[0;32mI (24) boot: ESP-IDF v5.5.5 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Oct 14 2026 14:21:22[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (69) boot:  2 flash_test       Unknown data     01 81 00310000 00084000[0m
+[0;32mI (76) boot:  3 model            Unknown data     01 82 00394000 005c3000[0m
+[0;32mI (82) boot: End of partition table[0m
+[0;32mI (85) esp_image: segment 0: paddr=00010020 vaddr=3c0d0020 size=313a8h (201640) map[0m
+[0;32mI (130) esp_image: segment 1: paddr=000413d0 vaddr=3fc96600 size=06574h ( 25972) load[0m
+[0;32mI (136) esp_image: segment 2: paddr=0004794c vaddr=40374000 size=086cch ( 34508) load[0m
+[0;32mI (144) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=c1dd4h (794068) map[0m
+[0;32mI (289) esp_image: segment 4: paddr=00111dfc vaddr=4037c6cc size=09ed4h ( 40660) load[0m
+[0;32mI (299) esp_image: segment 5: paddr=0011bcd8 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (307) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (307) boot: Disabling RNG early entropy source...[0m
+[0;32mI (317) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (318) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (318) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (320) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (324) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (328) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (332) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (337) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (342) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (347) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (352) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (356) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (360) esp_psram: Speed: 40MHz[0m
+[0;32mI (363) cpu_start: Multicore app[0m
+[0;32mI (1097) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (1106) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (1107) cpu_start: Pro cpu start user code[0m
+[0;32mI (1107) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (1108) app_init: Application information:[0m
+[0;32mI (1112) app_init: Project name:     esp32_chatgpt_speaker[0m
+[0;32mI (1118) app_init: App version:      a69e22d-dirty[0m
+[0;32mI (1122) app_init: Compile time:     Oct 14 2026 17:04:24[0m
+[0;32mI (1127) app_init: ELF file SHA256:  3b73f93a2...[0m
+[0;32mI (1132) app_init: ESP-IDF:          v5.5.5[0m
+[0;32mI (1136) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (1139) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (1144) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (1148) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (1154) heap_init: At 3FCA35F8 len 00046118 (280 KiB): RAM[0m
+[0;32mI (1159) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (1164) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (1170) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (1175) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (1183) spi_flash: detected chip: generic[0m
+[0;32mI (1185) spi_flash: flash io: dio[0m
+[0;32mI (1189) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (1195) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (1202) main_task: Started on CPU0[0m
+[0;32mI (1202) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (1212) main_task: Calling app_main()[0m
+[0;32mI (1212) main: Embedded WAV size: 74348 bytes[0m
+[0;32mI (1222) main: WAV format: 1[0m
+[0;32mI (1222) main: Channels: 2[0m
+[0;32mI (1222) main: Sample rate: 16000 Hz[0m
+[0;32mI (1232) main: Bits per sample: 16[0m
+[0;33mW (1232) i2c.master: Please check pull-up resistances whether be connected properly. Otherwise unexpected behavior would happen. For more detailed information, please read docs[0m
+[0;32mI (1252) board: I2C bus initialized successfully[0m
+[0;32mI (1252) I2S_IF: Auto get out handle 0x3c110e00 from in handle 0x3c110fbc when duplex mode[0m
+[0;32mI (1262) ES7210: Work in Slave mode[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1272) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1282) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1282) ES7210: Enable TDM mode[0m
+[0;32mI (1292) I2S_IF: Paired data: 0x3fcee908, current mode: record, paired in_enable: 0, paired out_enable: 0[0m
+[0;32mI (1292) I2S_IF: STD: RX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1302) I2S_IF: STD: RX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1302) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1312) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1322) ES7210: Bits 16[0m
+[0;32mI (1332) ES7210: Enable ES7210_INPUT_MIC1[0m
+[0;32mI (1332) ES7210: Enable ES7210_INPUT_MIC2[0m
+[0;32mI (1342) ES7210: Enable ES7210_INPUT_MIC3[0m
+[0;32mI (1342) ES7210: Enable ES7210_INPUT_MIC4[0m
+[0;32mI (1342) ES7210: Enable TDM mode[0m
+[0;32mI (1352) ES7210: Unmuted[0m
+[0;32mI (1352) Adev_Codec: Open codec device OK[0m
+[0;32mI (1362) ES8311: Work in Slave mode[0m
+[0;32mI (1362) I2S_IF: Current mode(playback) and peer mode have same sample_rate 16000, channel 2, bits_per_sample 32[0m
+[0;32mI (1362) I2S_IF: STD: TX, data_bit: 32, slot_bit: 32, ws_width: 32, slot_mode: STEREO, slot_mask: 0x3[0m
+[0;32mI (1372) I2S_IF: STD: TX, sample_rate_hz: 16000, mclk_multiple: 256, clk_src: 6[0m
+[0;32mI (1402) Adev_Codec: Open codec device OK[0m
+[0;32mI (1402) MODEL_LOADER: The storage free size is 23488 KB[0m
+[0;32mI (1402) MODEL_LOADER: The partition size is 5900 KB[0m
+[0;32mI (1402) MODEL_LOADER: Successfully load srmodels[0m
+[0;32mI (1402) AFE_CONFIG: Set WakeNet Model: wn10_hiesp[0m
+[0;33mW (1852) dl::Model: minimize() will delete unused inference variables, breaking model testing/debugging.[0m
+[0;32mI (1862) WAKENET10: MC Quantized wakenetx: wakenet10_tts4h12q8p1_hiesp_3_0.5872_0.6228, tigger:v4, mode:4[0m
+
+[0;32mI (1862) AFE: AFE Version: (2MIC_V251128)[0m
+[0;32mI (1862) AFE: Input PCM Config: total 4 channels(2 microphone, 1 playback), sample rate:16000[0m
+[0;32mI (1872) AFE: AFE Pipeline: [input] -> |AEC(SR_LOW_COST, NLP_OFF)| -> |SE(BSS)| -> |WakeNet(wn10_hiesp,)| -> [output][0m
+multinet:mn5q8_en
+Quantized8 Multinet5: MN5Q8_v2_english_8_0.9_0.90, beam search:v2, (Sep 24 2026 04:32:12)
+esp_mn_commands_update_from_sdkconfig
+[0;32mI (2542) MN_COMMAND: ---------------------SPEECH COMMANDS---------------------[0m
+[0;32mI (2542) MN_COMMAND: Command ID0, phrase ID0: TfL Mm c qbK[0m
+[0;32mI (2542) MN_COMMAND: Command ID1, phrase ID1: Sgl c Sel[0m
+[0;32mI (2552) MN_COMMAND: Command ID2, phrase ID2: PLd NoZ paNcL[0m
+[0;32mI (2552) MN_COMMAND: Command ID3, phrase ID3: TkN nN Mi StNDBnKS[0m
+[0;32mI (2562) MN_COMMAND: Command ID4, phrase ID4: TkN eF Mi StNDBnKS[0m
+[0;32mI (2572) MN_COMMAND: Command ID5, phrase ID5: hicST VnLYoM[0m
+[0;32mI (2572) MN_COMMAND: Command ID6, phrase ID6: LbcST VnLYoM[0m
+[0;32mI (2582) MN_COMMAND: Command ID7, phrase ID7: gNKRmS jc VnLYoM[0m
+[0;32mI (2582) MN_COMMAND: Command ID8, phrase ID8: DgKRmS jc VnLYoM[0m
+[0;32mI (2592) MN_COMMAND: Command ID9, phrase ID9: TkN nN jc TmVm[0m
+[0;32mI (2592) MN_COMMAND: Command ID10, phrase ID10: TkN eF jc TmVm[0m
+[0;32mI (2602) MN_COMMAND: Command ID11, phrase ID11: MdK Mm c Tm[0m
+[0;32mI (2602) MN_COMMAND: Command ID12, phrase ID12: MdK Mm c KnFm[0m
+[0;32mI (2612) MN_COMMAND: Command ID13, phrase ID13: TkN nN jc LiT[0m
+[0;32mI (2612) MN_COMMAND: Command ID14, phrase ID14: TkN eF jc LiT[0m
+[0;32mI (2622) MN_COMMAND: Command ID15, phrase ID15: pdNq jc KcLk To RfD[0m
+[0;32mI (2632) MN_COMMAND: Command ID16, phrase ID16: pdNq jc KcLk To GRmN[0m
+[0;32mI (2632) MN_COMMAND: Command ID17, phrase ID17: TkN nN eL jc list[0m
+[0;32mI (2642) MN_COMMAND: Command ID18, phrase ID18: TkN eF eL jc list[0m
+[0;32mI (2642) MN_COMMAND: Command ID19, phrase ID19: TkN nN jc fR KcNDgscNk[0m
+[0;32mI (2652) MN_COMMAND: Command ID20, phrase ID20: TkN eF jc fR KcNDgscNk[0m
+[0;32mI (2662) MN_COMMAND: Command ID21, phrase ID21: SfT jc TfMPRcpk To SgKSTmN DgGRmZ[0m
+[0;32mI (2662) MN_COMMAND: Command ID22, phrase ID22: SfT jc TfMPRcpk To SfVcNTmN DgGRmZ[0m
+[0;32mI (2672) MN_COMMAND: Command ID23, phrase ID23: SfT jc TfMPRcpk To dTmN DgGRmZ[0m
+[0;32mI (2682) MN_COMMAND: Command ID24, phrase ID24: SfT jc TfMPRcpk To NiNTmN DgGRmZ[0m
+[0;32mI (2692) MN_COMMAND: Command ID25, phrase ID25: SfT jc TfMPRcpk To TWfNTm DgGRmZ[0m
+[0;32mI (2692) MN_COMMAND: Command ID26, phrase ID26: SfT jc TfMPRcpk To TWfNTm WcN DgGRmZ[0m
+[0;32mI (2702) main: Playing hiashita.wav[0m
+[0;32mI (2702) MN_COMMAND: Command ID27, phrase ID27: SfT jc TfMPRcpk To TWfNTm To DgGRmZ[0m
+[0;32mI (2712) MN_COMMAND: Command ID28, phrase ID28: SfT jc TfMPRcpk To TWfNTm vRm DgGRmZ[0m
+[0;32mI (2722) MN_COMMAND: Command ID29, phrase ID29: SfT jc TfMPRcpk To TWfNTm FeR DgGRmZ[0m
+[0;32mI (2732) MN_COMMAND: Command ID30, phrase ID30: SfT jc TfMPRcpk To TWfNTm FiV DgGRmZ[0m
+[0;32mI (2732) MN_COMMAND: Command ID31, phrase ID31: SfT jc TfMPRcpk To TWfNTm SgKS DgGRmZ[0m
+[0;32mI (2742) MN_COMMAND: ---------------------------------------------------------[0m
+
+phrase id:0, command id:0, str:T f L   M m   c   q b K 
+phrase id:1, command id:1, str:S g l   c   S e l 
+phrase id:2, command id:2, str:P L d   N o Z   p a N c L 
+phrase id:3, command id:3, str:T k N   n N   M i   S t N D B n K S 
+phrase id:4, command id:4, str:T k N   e F   M i   S t N D B n K S 
+phrase id:5, command id:5, str:h i c S T   V n L Y o M 
+phrase id:6, command id:6, str:L b c S T   V n L Y o M 
+phrase id:7, command id:7, str:g N K R m S   j c   V n L Y o M 
+phrase id:8, command id:8, str:D g K R m S   j c   V n L Y o M 
+phrase id:9, command id:9, str:T k N   n N   j c   T m V m 
+phrase id:10, command id:10, str:T k N   e F   j c   T m V m 
+phrase id:11, command id:11, str:M d K   M m   c   T m 
+phrase id:12, command id:12, str:M d K   M m   c   K n F m 
+phrase id:13, command id:13, str:T k N   n N   j c   L i T 
+phrase id:14, command id:14, str:T k N   e F   j c   L i T 
+phrase id:15, command id:15, str:p d N q   j c   K c L k   T o   R f D 
+phrase id:16, command id:16, str:p d N q   j c   K c L k   T o   G R m N 
+phrase id:17, command id:17, str:T k N   n N   e L   j c   l i s t 
+phrase id:18, command id:18, str:T k N   e F   e L   j c   l i s t 
+phrase id:19, command id:19, str:T k N   n N   j c   f R   K c N D g s c N k 
+phrase id:20, command id:20, str:T k N   e F   j c   f R   K c N D g s c N k 
+phrase id:21, command id:21, str:S f T   j c   T f M P R c p k   T o   S g K S T m N   D g G R m Z 
+phrase id:22, command id:22, str:S f T   j c   T f M P R c p k   T o   S f V c N T m N   D g G R m Z 
+phrase id:23, command id:23, str:S f T   j c   T f M P R c p k   T o   d T m N   D g G R m Z 
+phrase id:24, command id:24, str:S f T   j c   T f M P R c p k   T o   N i N T m N   D g G R m Z 
+phrase id:25, command id:25, str:S f T   j c   T f M P R c p k   T o   T W f N T m   D g G R m Z 
+phrase id:26, command id:26, str:S f T   j c   T f M P R c p k   T o   T W f N T m   W c N   D g G R m Z 
+phrase id:27, command id:27, str:S f T   j c   T f M P R c p k   T o   T W f N T m   T o   D g G R m Z 
+phrase id:28, command id:28, str:S f T   j c   T f M P R c p k   T o   T W f N T m   v R m   D g G R m Z 
+phrase id:29, command id:29, str:S f T   j c   T f M P R c p k   T o   T W f N T m   F e R   D g G R m Z 
+phrase id:30, command id:30, str:S f T   j c   T f M P R c p k   T o   T W f N T m   F i V   D g G R m Z 
+phrase id:31, command id:31, str:S f T   j c   T f M P R c p k   T o   T W f N T m   S g K S   D g G R m Z 
+[1;31mE (3002) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3002) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3012) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3022) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3042) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3042) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3072) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3082) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3102) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3112) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3132) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3132) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3142) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3152) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3172) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3172) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3202) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3202) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3222) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3232) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3252) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3252) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3262) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3272) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3292) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3292) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3312) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3322) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3342) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3352) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3372) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3372) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3382) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3392) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3412) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3412) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3442) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3442) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3462) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3472) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3492) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3492) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3502) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3512) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3532) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3532) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3562) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3562) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3592) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3592) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3612) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3612) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3632) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3632) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3682) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3682) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3712) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3712) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3732) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3732) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3752) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3762) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3772) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3772) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3802) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3802) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3832) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3832) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3852) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3862) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3872) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3882) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3892) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3892) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3922) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3922) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3952) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3952) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3972) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3982) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (3992) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4002) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4012) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4012) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4042) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4052) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4072) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4072) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4092) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4102) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4112) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4122) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4132) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4142) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4162) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4172) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4192) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4192) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4212) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4222) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4232) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4242) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4252) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4262) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4282) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4292) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4312) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4322) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4342) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4342) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4352) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4362) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4382) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4382) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4402) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4412) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4432) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4442) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4462) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4462) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4472) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4482) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4502) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4502) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4522) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4532) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4552) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4562) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4582) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4582) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4592) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4602) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4622) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4622) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4672) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4682) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4702) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4702) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4722) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4732) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4742) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4742) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4772) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4772) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4802) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4802) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4822) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4832) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4842) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4852) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4862) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4862) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4892) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4892) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4922) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4922) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4942) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4952) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4962) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4972) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4982) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (4992) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5012) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5022) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5042) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5042) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5072) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5072) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5082) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5092) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5102) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5112) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5132) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5142) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5162) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5172) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5192) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5192) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5202) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5212) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5232) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5232) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5252) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5262) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5282) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5292) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5312) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5312) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5322) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5332) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5352) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5352) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5382) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5382) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5402) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5412) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5432) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5432) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5452) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5462) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5472) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5472) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5502) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5502) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5532) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5532) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5552) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5562) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5572) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5582) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5592) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5602) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5622) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5622) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5652) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5692) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5692) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5712) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5712) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5732) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5732) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5782) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5792) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5812) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5812) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5842) Conv: no Conv kernel for packed key 0x0202[0m
+[1;31mE (5842) Conv: no Conv kernel for packed key 0x0202[0m

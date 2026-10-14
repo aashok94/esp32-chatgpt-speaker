@@ -1,0 +1,17 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=1 C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker
+CMake Error at C:/esp/v5.5.5/esp-idf/tools/cmake/tool_version_check.cmake:36 (message):
+
+
+  Tool doesn't match supported version from list ['esp-14.2.0_20260121']:
+  C:/Espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc.exe
+
+  Please try to run 'idf.py fullclean' to solve it.
+
+Call Stack (most recent call first):
+  C:/esp/v5.5.5/esp-idf/components/esp_common/project_include.cmake:10 (check_expected_tool_version)
+  C:/esp/v5.5.5/esp-idf/tools/cmake/build.cmake:471 (include)
+  C:/esp/v5.5.5/esp-idf/tools/cmake/build.cmake:722 (__build_process_project_includes)
+  C:/esp/v5.5.5/esp-idf/tools/cmake/project.cmake:752 (idf_build_process)
+  CMakeLists.txt:4 (project)
+
+

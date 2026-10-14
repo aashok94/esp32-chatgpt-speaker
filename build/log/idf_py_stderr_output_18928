@@ -1,0 +1,48 @@
+Command: C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe C:\esp\v5.5.5\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\esp32_chatgpt_speaker.elf C:\Users\PCUser\Documents\code\esp32-chatgpt-speaker\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe' 'C:\esp\v5.5.5\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40048d0b: [0;33muart_rx_one_char[0m[0m in [0;32mROM[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8924: [0;33mcall_start_cpu0[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x420939b6: [0;33mtask_wdt_timeout_handling[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m436[0m
+[0m--- 0x42093dcc: [0;33mtask_wdt_isr[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/esp_system/task_wdt/task_wdt.c[0m[0m:[1;31m509[0m
+[0m--- 0x40377a15: [0;33m_xt_lowint1[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1264[0m
+[0m--- 0x420ab42e: [0;33mmul_cvf_rvf_cvf_728[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_processor/dl_audio_base/tie728/mul_cvf_rvf_cvf_728.S[0m[0m:[1;31m16[0m
+[0m--- 0x4201bd53: [0;33mesp_bss_hps16fft_process[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_processor/blind_source_separation/esp_bss_728_s16.c[0m[0m:[1;31m348[0m
+[0m--- 0x42010f0b: [0;33mafe_feed[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_front_end/esp_afe_sr_2mic.c[0m[0m:[1;31m745[0m
+[0m--- 0x4200c7ae: [0;33mfeed_Task[0m[0m at [0;32mC:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/main/speech_det_driver/mic_speech.c[0m[0m:[1;31m39[0m
+[0m--- 0x4037db79: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x403785de: [0;33mesp_crosscore_isr[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/esp_system/crosscore_int.c[0m[0m:[1;31m74[0m
+[0m--- 0x40377a15: [0;33m_xt_lowint1[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1264[0m
+[0m--- 0x4037713e: [0;33mdl_tie728_pointwise_conv1d_qacc_i16o16k8b16_loop_t[0m[0m at [0;32mdl_tie728_pointwise_conv1d_qacc_i16o16k8b16.S.obj[0m[0m:[1;31m?[0m
+[0m--- 0x42042cdc: [0;33mdl_nn_pointwise_conv1d[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/dl_lib/nn/dl_nn_pointwise_conv1d.c[0m[0m:[1;31m265[0m
+[0m--- 0x420409cc: [0;33mdl_layer_liglu_i16[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/dl_lib/layer/dl_layer_liglu.c[0m[0m:[1;31m194[0m
+[0m--- 0x42031216: [0;33mwakenet9_model_run_step2[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/wakenet/wakenet9_quantized.c[0m[0m:[1;31m743[0m
+[0m--- 0x42032257: [0;33mmodel_detect[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/wakenet/wakenet9_quantized.c[0m[0m:[1;31m990[0m
+[0m--- 0x4203233b: [0;33mmodel_detect_mfcc[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/wakenet/wakenet9_quantized.c[0m[0m:[1;31m1024[0m
+[0m--- 0x4200fe3e: [0;33mafe_wn_run_multi_mic[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_front_end/esp_afe_sr_2mic.c[0m[0m:[1;31m475[0m
+[0m--- 0x42010cb9: [0;33mafe_fetch_with_delay[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_front_end/esp_afe_sr_2mic.c[0m[0m:[1;31m830[0m
+[0m--- 0x42010ce9: [0;33mafe_fetch[0m[0m at [0;32m/builds/speech-internal/esp_sr_lib/components/esp_audio_front_end/esp_afe_sr_2mic.c[0m[0m:[1;31m842[0m
+[0m--- 0x4200c881: [0;33mdetect_Task[0m[0m at [0;32mC:/Users/PCUser/Documents/code/esp32-chatgpt-speaker/main/speech_det_driver/mic_speech.c[0m[0m:[1;31m72[0m
+[0m--- 0x4037db79: [0;33mvPortTaskWrapper[0m[0m at [0;32mC:/esp/v5.5.5/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0;33m--- To exit from IDF monitor please use "Ctrl+]". Alternatively, you can use Ctrl+T Ctrl+X to exit.[0m
+[0m
+Traceback (most recent call last):
+  File "C:\esp\v5.5.5\esp-idf\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PCUser\miniconda3\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PCUser\miniconda3\Lib\subprocess.py", line 1201, in communicate
+    self.wait()
+  File "C:\Users\PCUser\miniconda3\Lib\subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\PCUser\miniconda3\Lib\subprocess.py", line 1590, in _wait
+    result = _winapi.WaitForSingleObject(self._handle,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
