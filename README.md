@@ -1,5 +1,54 @@
 # esp32-chatgpt-speaker
 
+## Current test: Friday greetings using SpeechRecognition
+
+The selected firmware is a USB microphone bridge, replacing the WakeNet path
+described later in this document. It does not play the WAV at startup.
+The ESP32 records four-second mono 16 kHz PCM clips; a Python helper on the PC
+uses `SpeechRecognition.recognize_google()` with its default testing key.
+When the transcript contains "hey friday", "hi friday", or "hello friday", the PC commands the ESP32
+to play `main/assets/hiashita.wav`. The PC and USB connection must remain active.
+This is a clip-based test with gaps during transcription/playback, not a
+continuous local wake-word detector. Google recognition requires internet and
+uploads recorded clips; its default testing access may fail or be revoked.
+No Google Cloud project or PyAudio installation is required.
+
+In PowerShell, from the project folder:
+
+```powershell
+python -m venv .stt-venv
+& .\.stt-venv\Scripts\python.exe -m pip install -r tools/requirements-stt.txt
+
+. C:\Espressif\tools\Microsoft.v5.5.5.PowerShell_profile.ps1
+Remove-Item 'Env:_IDF.PY_COMPLETE' -ErrorAction SilentlyContinue
+$env:PYTHONUTF8 = "1"
+& C:\Espressif\tools\python\v5.5.5\venv\Scripts\python.exe C:\esp\v5.5.5\esp-idf\tools\idf.py -p COM4 flash
+
+& .\.stt-venv\Scripts\python.exe tools/hi_kuba.py --port COM4
+```
+
+Close `idf_monitor` first; only one program can own COM4. The helper resets the
+board on connection. Say "Hey Friday", "Hi Friday", or "Hello Friday" when
+the helper prints `LISTEN NOW`. Recognition results appear in that terminal.
+Press Ctrl+C to stop. Test options:
+
+Trigger matching ignores case and punctuation and requires complete words.
+Use repeated `--phrase` options to override the defaults with custom triggers.
+
+```powershell
+# Capture locally without uploading; listen to recordings/latest.wav afterward.
+& .\.stt-venv\Scripts\python.exe tools/hi_kuba.py --record-only
+# Try the other physical microphone channel if input is silent or unusable.
+& .\.stt-venv\Scripts\python.exe tools/hi_kuba.py --record-only --channel 3
+# Verify the speaker without a recording or Google request.
+& .\.stt-venv\Scripts\python.exe tools/hi_kuba.py --play-test
+```
+
+Recordings are saved locally to `recordings/latest.wav` (overwritten each clip,
+excluded from Git). Firmware protocol responses and an audio checksum detect
+failed microphone reads and corrupted USB transfers. Logs are suppressed after
+bridge initialization so they cannot be mixed into binary audio.
+
 ## Development environment
 
 - **OS:** Windows
@@ -46,7 +95,7 @@ Open the serial monitor:
 idf.py monitor
 ```
 
-The first firmware test should print:
+The original firmware bring-up test printed (the current USB bridge does not):
 
 ```text
 Hello, Ashita!
@@ -95,6 +144,12 @@ main/hardeware_driver/
 
 These files configure the board's I2C, I2S, ES8311 playback codec, and ES7210 microphone codec.
 
+The speaker amplifier also requires TCA9555 expander pin 8 (P10) HIGH.
+`esp_board_init()` now configures that pin as an output through I2C address
+`0x20`, preserves the other expander pins, and verifies the register values.
+Look for `Speaker amplifier enabled` before startup playback. Codec writes
+alone do not confirm that the speaker is audible.
+
 ## Audio playback
 
 Record a test phrase in Audacity and export it as:
@@ -138,7 +193,7 @@ Use these values when calling `esp_board_init()`.
 
 Play the WAV in small chunks through `esp_audio_play()` to avoid large temporary allocations.
 
-## Speech recognition
+## Previous WakeNet setup (reference)
 
 Copy:
 
@@ -214,7 +269,7 @@ idf.py fullclean
 idf.py build
 ```
 
-## Planned voice trigger
+## Previous planned voice trigger (not active)
 
 ```text
 "Hi ESP"

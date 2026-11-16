@@ -6,7 +6,7 @@
 #include "esp_err.h"
 #include "esp_log.h"
 #include "hardeware_driver/bsp_board.h"
-#include "speech_det_driver/mic_speech.h"
+#include "usb_speech_bridge.h"
 
 
 static const char *TAG = "main";
@@ -31,28 +31,6 @@ static uint16_t read_u16_le(const uint8_t *data)
 {
     return ((uint16_t)data[0]) |
            ((uint16_t)data[1] << 8);
-}
-
-
-/*
- * Called by the speech driver when WakeNet detects "Hi ESP".
- *
- * MultiNet command recognition is currently disabled, so
- * ESP_SR_EVT_CMD is kept only for possible future use.
- */
-static void speech_event_callback(
-    esp_sr_rec_event_t event,
-    esp_sr_evt_data_t evt_data,
-    void *user_data
-)
-{
-    if (event == ESP_SR_EVT_AWAKEN) {
-        ESP_LOGI(TAG, "Wake word detected");
-    }
-
-    if (event == ESP_SR_EVT_CMD) {
-        ESP_LOGI(TAG, "Command detected: %u", evt_data.sr_cmd);
-    }
 }
 
 
@@ -91,6 +69,11 @@ void app_main(void)
         const uint8_t *chunk = wav_start + offset;
         uint32_t chunk_size = read_u32_le(chunk + 4);
 
+        if (chunk_size > wav_size - offset - 8) {
+            ESP_LOGE(TAG, "Truncated WAV chunk");
+            return;
+        }
+
         if (memcmp(chunk, "fmt ", 4) == 0 && chunk_size >= 16) {
             const uint8_t *fmt = chunk + 8;
 
@@ -113,8 +96,10 @@ void app_main(void)
         }
     }
 
-    if (audio_data == NULL) {
-        ESP_LOGE(TAG, "No audio data found in WAV");
+    if (audio_data == NULL || audio_size == 0 || audio_format != 1 ||
+        sample_rate != 16000 || channels != 2 || bits_per_sample != 16 ||
+        audio_size % 4 != 0) {
+        ESP_LOGE(TAG, "Expected nonempty 16 kHz stereo 16-bit PCM WAV");
         return;
     }
 
@@ -140,47 +125,6 @@ void app_main(void)
     ESP_ERROR_CHECK(esp_audio_set_play_vol(60));
 
 
-    /*
-     * Play the startup WAV BEFORE starting WakeNet.
-     *
-     * Speech_Init() starts the microphone/AFE tasks, which use the
-     * same audio/I2S hardware. Starting those tasks before playback
-     * can interfere with speaker playback.
-     */
-    ESP_LOGI(TAG, "Playing hiashita.wav");
-
-    const size_t chunk_size = 2048;
-
-    for (size_t offset = 0; offset < audio_size; offset += chunk_size) {
-        size_t remaining = audio_size - offset;
-        size_t current_size =
-            remaining < chunk_size ? remaining : chunk_size;
-
-        ESP_ERROR_CHECK(
-            esp_audio_play(
-                (const int16_t *)(audio_data + offset),
-                current_size,
-                portMAX_DELAY
-            )
-        );
-    }
-
-    ESP_LOGI(TAG, "Playback finished");
-
-
-    /*
-     * Start speech recognition only AFTER startup playback finishes.
-     *
-     * Current flow:
-     *
-     * microphone -> AFE -> WakeNet ("Hi ESP")
-     *            -> speech_event_callback()
-     *
-     * Later the wake event will start the ChatGPT voice session.
-     */
-    ESP_ERROR_CHECK(
-        Speech_register_callback(speech_event_callback)
-    );
-
-    Speech_Init();
+    ESP_LOGI(TAG, "USB speech bridge ready; start tools/hi_kuba.py on the PC");
+    ESP_ERROR_CHECK(usb_speech_bridge_run(audio_data, audio_size));
 }

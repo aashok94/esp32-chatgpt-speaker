@@ -1,0 +1,4 @@
+/build/
+.stt-venv/
+recordings/
+__pycache__/

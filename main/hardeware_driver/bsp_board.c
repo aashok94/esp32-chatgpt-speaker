@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "esp_err.h"
 #include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
 #include "freertos/semphr.h"
 #include "string.h"
 #include "driver/gpio.h"
@@ -64,6 +65,56 @@ i2c_master_bus_handle_t esp_ret_i2c_handle(void)
 uint32_t Get_SD_Size(void)
 {
     return SDCard_Size;
+}
+
+/* TCA9555 P10 (expander pin 8) enables the board's speaker amplifier. */
+static esp_err_t bsp_amp_init(void)
+{
+    if (!i2c_bus_handle) {
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    const i2c_device_config_t config = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .device_address = 0x20,
+        .scl_speed_hz = 100000,
+    };
+    i2c_master_dev_handle_t expander = NULL;
+    ESP_RETURN_ON_ERROR(i2c_master_bus_add_device(i2c_bus_handle, &config, &expander),
+                        TAG, "Failed to attach TCA9555");
+
+    /* Preserve every other output and direction bit. Set the latch before
+     * changing P10 to an output so the amplifier is enabled without a low pulse. */
+    const uint8_t registers[] = {0x03, 0x07}; /* Output port 1, configuration port 1 */
+    esp_err_t ret = ESP_OK;
+    for (size_t i = 0; i < sizeof(registers); ++i) {
+        uint8_t value;
+        ret = i2c_master_transmit_receive(expander, &registers[i], 1, &value, 1, 100);
+        if (ret != ESP_OK) {
+            break;
+        }
+        const uint8_t desired = i == 0 ? (value | 0x01) : (value & ~0x01);
+        const uint8_t write_data[] = {registers[i], desired};
+        ret = i2c_master_transmit(expander, write_data, sizeof(write_data), 100);
+        if (ret != ESP_OK) {
+            break;
+        }
+        ret = i2c_master_transmit_receive(expander, &registers[i], 1, &value, 1, 100);
+        if (ret != ESP_OK) {
+            break;
+        }
+        if (value != desired) {
+            ret = ESP_ERR_INVALID_RESPONSE;
+            break;
+        }
+    }
+
+    esp_err_t cleanup_ret = i2c_master_bus_rm_device(expander);
+    ESP_RETURN_ON_ERROR(ret, TAG, "Failed to enable speaker amplifier");
+    ESP_RETURN_ON_ERROR(cleanup_ret, TAG, "Failed to release TCA9555 handle");
+    vTaskDelay(pdMS_TO_TICKS(10));
+    ESP_LOGI(TAG, "Speaker amplifier enabled (TCA9555 pin 8; registers verified)");
+    return ESP_OK;
 }
 
 static esp_err_t i2c_master_init(void)
@@ -462,7 +513,7 @@ esp_err_t esp_board_init(uint32_t sample_rate, int channel_format, int bits_per_
 {
     /*!< Initialize I2C bus, used for audio codec*/
 
-    i2c_master_init();
+    ESP_RETURN_ON_ERROR(i2c_master_init(), TAG, "I2C initialization failed");
     s_play_sample_rate = sample_rate;
 
     if (channel_format != 2 && channel_format != 1) {
@@ -481,18 +532,7 @@ esp_err_t esp_board_init(uint32_t sample_rate, int channel_format, int bits_per_
     // Because record and play use the same i2s.
     bsp_codec_init(16000, 16000, 2, 32);
 
-    /* Initialize PA */
-     /*gpio_config_t  io_conf;
-     memset(&io_conf, 0, sizeof(io_conf));
-     io_conf.intr_type = GPIO_INTR_DISABLE;
-     io_conf.mode = GPIO_MODE_OUTPUT;
-     io_conf.pin_bit_mask = ((1ULL << GPIO_PWR_CTRL));
-     io_conf.pull_down_en = 0;
-     io_conf.pull_up_en = 0;
-     gpio_config(&io_conf);
-     gpio_set_level(GPIO_PWR_CTRL, 1);*/
-
-    return ESP_OK;
+    return bsp_amp_init();
 }
 
 esp_err_t esp_sdcard_init(char *mount_point, size_t max_files)
